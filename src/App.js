@@ -5,6 +5,7 @@ import Welcome from "./features/auth/Welcome";
 import RequireAuth from "./features/auth/RequireAuth";
 import Login from "./features/auth/Login";
 import UserList from "./features/user/UserList";
+import PersistLogin from "./features/auth/PersistLogin";
 
 function App() {
     return (
@@ -13,9 +14,11 @@ function App() {
                 <Route index element={<Public />} />
                 <Route path="/login" element={<Login />} />
 
-                <Route element={<RequireAuth />}>
-                    <Route path="/welcome" element={<Welcome />} />
-                    <Route path="/userslist" element={<UserList />} />
+                <Route element={<PersistLogin />}>
+                    <Route element={<RequireAuth />}>
+                        <Route path="/welcome" element={<Welcome />} />
+                        <Route path="/userslist" element={<UserList />} />
+                    </Route>
                 </Route>
             </Route>
         </Routes>

@@ -74,3 +74,15 @@ a:hover, a:focus {
 .users ul {
   list-style-type: none;
 }
+
+.form__persist {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.form__checkbox {
+  width: 24px;
+  height: 24px;
+}
